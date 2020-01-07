@@ -44,7 +44,7 @@ describe('App Component', () => {
         classInstance.updateState();
         const newState = classInstance.state.hideBtn;
         expect(newState).toBe(true);
-    })
+    });
 
     it('returnValue method works', ()=>{
         const classInstance = wrapper.instance();
