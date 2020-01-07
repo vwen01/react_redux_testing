@@ -20,10 +20,25 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.fetch = this.fetch.bind(this);
+        this.state = {
+            hideBtn: false
+        }
     }
 
     fetch() {
         this.props.fetchPosts();
+        this.updateState();
+    }
+
+    updateState(){
+        const {hideBtn} = this.state;
+        this.setState({
+            hideBtn: !hideBtn
+        })
+    }
+
+    returnValue(number){
+        return number + 1;
     }
 
     render() {

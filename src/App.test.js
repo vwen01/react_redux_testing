@@ -37,6 +37,20 @@ describe('App Component', () => {
     it('Should render without errors ', ()=>{
         const component = findByTestAttr(wrapper, 'appComponent')
         expect(component.length).toBe(1);
+    });
+
+    it('update HideBtn state as expected', ()=>{
+        const classInstance = wrapper.instance();
+        classInstance.updateState();
+        const newState = classInstance.state.hideBtn;
+        expect(newState).toBe(true);
     })
+
+    it('returnValue method works', ()=>{
+        const classInstance = wrapper.instance();
+        const returnValue = classInstance.returnValue(2);
+        expect(returnValue).toBe(3);
+    })
+
 
 });
