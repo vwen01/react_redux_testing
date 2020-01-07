@@ -4,7 +4,6 @@ import Headline from "./Headline";
 import {checkProps} from './../../utils/testUtils';
 
 //testing rendering
-
 const setUp = (props = {}) => {
     return shallow(<Headline {...props}/>);
 };
