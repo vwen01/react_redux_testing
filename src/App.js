@@ -38,13 +38,13 @@ class App extends Component {
         return (
             <div className="App">
                 <Header/>
-                <section className="main">
+                <section className="main" data-test="appComponent">
                     <Headline header="Posts" desc="Click to Render" tempArr={tempArr}/>
                     <SharedButton {...configButton}/>
                     {posts.length > 0 &&
                     <div>
                         {posts.map((post, index) => {
-                            const { title, body } = post;
+                            const {title, body} = post;
                             const configListItem = {
                                 title,
                                 desc: body
@@ -69,7 +69,7 @@ const mapStateToProps = state => {
 
 };
 
-const mapDispatchToProps = dispatch=> {
+const mapDispatchToProps = dispatch => {
     return {
         fetchPosts: bindActionCreators(fetchPosts, dispatch),
     }
